@@ -152,8 +152,8 @@ def main():
     logger, tb_logger = init_loggers(opt)
 
     # create train and validation dataloaders
-    result = create_train_val_dataloader(opt, logger)
-    train_loader, train_sampler, val_loader, total_epochs, total_iters = result
+    # result = create_train_val_dataloader(opt, logger)
+    # train_loader, train_sampler, val_loader, total_epochs, total_iters = result
 
     # create model
     if resume_state:  # resume training
@@ -168,7 +168,9 @@ def main():
         model = create_model(opt)
         start_epoch = 0
         current_iter = 0
-
+    
+    print(model)
+    exit()
     # create message logger (formatted outputs)
     msg_logger = MessageLogger(opt, current_iter, tb_logger)
 
